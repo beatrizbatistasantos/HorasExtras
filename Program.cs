@@ -5,31 +5,45 @@
 // Considere que cada hora-extra é paga com acréscimo de 40%.
 
 //Solicita entrada...
-decimal salarioHoraBase, salario;
-int horasTrabalhadas, numeroHorasExtras;
+Console.Clear();
+double salarioHoraBase, horasTrabalhadas, horasExtras;
+// double salarioFinal = CalculaSalario(salarioHoraBase, horasTrabalhadas, horasExtras);
 
-Console.WriteLine("Digite o valor do Salário Hora Base:");
-salarioHoraBase = Convert.ToDecimal(Console.ReadLine());
+Console.BackgroundColor = ConsoleColor.DarkGray;
 
-Console.WriteLine("Digite a quantidade de Horas Trabalhadas:");
-horasTrabalhadas = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("---- Seja bem-vindo à Calculadora de Horas Extras ----");
 
-Console.WriteLine("Digite a quantidade de Horas Extras:");
-salarioHoraBase = Convert.ToDecimal(Console.ReadLine());
+Console.Write("Digite o valor do Salário/Hora-Base:");
+salarioHoraBase = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Digite a quantidade de Horas Trabalhadas:");
+horasTrabalhadas = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Digite a quantidade de Horas Extras:");
+horasExtras = Convert.ToDouble(Console.ReadLine());
+
+double salario = salarioHoraBase * horasTrabalhadas;
+double salarioTotal = CalculaSalario(salarioHoraBase, horasTrabalhadas, horasExtras);
 
 
 //Receber a entrada do usuário e converter...
-//Executar função CalculaSalario
-void CalculaSalario()
-{
-    
-}
-salario = CalculaSalario(.......);
+//salario = CalculaSalario(.......);
 //Exibir saida
 
-Console.WriteLine($"O salário é {salario:C2}");
+Console.WriteLine($"O salário sem horas extras é: {salario:C2}");
+Console.WriteLine($"O salário com horas extras é: {salarioTotal:C2}");
+Console.ResetColor();
 
-_________ CalculaSalario(.......)
+
+//Executar função CalculaSalario
+double CalculaSalario(double salarioHoraBase, double horasTrabalhadas, double horasExtras)
 {
-    //lógica
+    double salarioSemHorasExtras = salarioHoraBase * horasTrabalhadas;
+    double valorHorasExtras = horasExtras * (salarioHoraBase * 1.4);
+    return salarioSemHorasExtras + valorHorasExtras;
 }
+
+// _________ CalculaSalario(.......)
+// {
+//     //lógica
+// }
